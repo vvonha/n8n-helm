@@ -11,5 +11,6 @@ parameters:
   gidRangeEnd: "2000"
   basePath: "/n8n"
 reclaimPolicy: Retain
+volumeBindingMode: Immediate
 mountOptions:
   - tls

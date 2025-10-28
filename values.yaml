@@ -54,7 +54,7 @@ redis:
 
 efs:
   enabled: true
-  pvcName: n8n-config-pvc
+  pvcName: n8n-efs-pvc
   mountPath: /home/node/.n8n
   storageClassName: efs-sc
   storage: 1Gi
@@ -78,6 +78,8 @@ env:
 
   - name: EXECUTIONS_MODE
     value: "queue"
+  - name: QUEUE_MODE
+    value: "redis"
   - name: QUEUE_BULL_REDIS_HOST
     value: "n8n-redis.n8n.svc.cluster.local"
   - name: QUEUE_BULL_REDIS_PORT
