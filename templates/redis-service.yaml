@@ -1,0 +1,15 @@
+{{- if .Values.redis.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: n8n-redis
+  labels:
+    app: n8n-redis
+spec:
+  selector:
+    app: n8n-redis
+  ports:
+    - port: {{ .Values.redis.port }}
+      targetPort: {{ .Values.redis.port }}
+      protocol: TCP
+{{- end }}
