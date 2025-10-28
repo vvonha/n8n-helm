@@ -10,6 +10,6 @@ parameters:
   gidRangeStart: "1000"
   gidRangeEnd: "2000"
   basePath: "/n8n"
-reclaimPolicy: Retrain
+reclaimPolicy: Retain
 mountOptions:
   - tls
