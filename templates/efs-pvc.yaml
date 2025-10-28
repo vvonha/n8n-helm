@@ -1,0 +1,14 @@
+{{- if .Values.efs.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.efs.pvcName }}
+  namespace: n8n
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: {{ .Values.efs.storageClassName | default "efs-sc" }}
+  resources:
+    requests:
+      storage: {{ .Values.efs.storage | default "1Gi" }}
+{{- end }}
