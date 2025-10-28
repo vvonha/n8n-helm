@@ -24,4 +24,10 @@ spec:
           {{- toYaml .Values.env | nindent 10 }}
         resources:
           {{- toYaml .Values.resources | nindent 10 }}
-
+        volumeMounts:
+          - name: n8n-data
+            mountPath: {{ .Values.efs.mountPath }}
+      volumes:
+        - name: n8n-data
+          persistentVolumeClaim:
+            claimName: {{ .Values.efs.pvcName }}

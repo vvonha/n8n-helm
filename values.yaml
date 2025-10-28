@@ -56,7 +56,8 @@ efs:
   enabled: true
   pvcName: n8n-config-pvc
   mountPath: /home/node/.n8n
-
+  storageClassName: efs-sc
+  storage: 1Gi
 
 env:
   - name: N8N_BASIC_AUTH_ACTIVE
