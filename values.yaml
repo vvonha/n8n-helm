@@ -45,6 +45,19 @@ autoscaling:
   maxReplicas: 10
   targetCPUUtilizationPercentage: 70
 
+redis:
+  enabled: true
+  image: redis:7-alpine
+  port: 6379
+  storage: 1Gi
+  storageClassName: gp2
+
+efs:
+  enabled: true
+  pvcName: n8n-config-pvc
+  mountPath: /home/node/.n8n
+
+
 env:
   - name: N8N_BASIC_AUTH_ACTIVE
     value: "true"
@@ -52,6 +65,7 @@ env:
     value: "admin"
   - name: N8N_BASIC_AUTH_PASSWORD
     value: "123bigdata"
+
   - name: N8N_HOST
     value: "n8n.ldccai.com"
   - name: N8N_PORT
@@ -60,8 +74,14 @@ env:
     value: "https://n8n.ldccai.com/"
   - name: GENERIC_TIMEZONE
     value: "Asia/Seoul"
+
   - name: EXECUTIONS_MODE
-    value: "regular"
+    value: "queue"
+  - name: QUEUE_BULL_REDIS_HOST
+    value: "n8n-redis.n8n.svc.cluster.local"
+  - name: QUEUE_BULL_REDIS_PORT
+    value: "6379"
+
   - name: DB_TYPE
     value: "postgresdb"
   - name: DB_POSTGRESDB_HOST
@@ -83,4 +103,6 @@ env:
       secretKeyRef:
         name: n8n-postgres-secret
         key: POSTGRES_PASSWORD
-
+  
+  - name: N8N_ENCRYPTION_KEY
+    value: "qaY5ufgkxX+C7Ft025s8r1JpjMJVFHkwo9iJdxIeNoA="
