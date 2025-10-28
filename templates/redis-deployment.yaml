@@ -1,0 +1,31 @@
+{{- if .Values.redis.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: n8n-redis
+  labels:
+    app: n8n-redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: n8n-redis
+  template:
+    metadata:
+      labels:
+        app: n8n-redis
+    spec:
+      containers:
+        - name: redis
+          image: {{ .Values.redis.image }}
+          ports:
+            - containerPort: {{ .Values.redis.port }}
+          args: ["--appendonly", "yes"]
+          volumeMounts:
+            - name: redis-data
+              mountPath: /data
+      volumes:
+        - name: redis-data
+          persistentVolumeClaim:
+            claimName: n8n-redis-pvc
+{{- end }}
