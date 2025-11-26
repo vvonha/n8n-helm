@@ -22,7 +22,7 @@ spec:
           pathType: {{ .pathType }}
           backend:
             service:
-              name: n8n
+              name: n8n-service
               port:
                 number: {{ $.Values.service.port }}
 {{- end }}
