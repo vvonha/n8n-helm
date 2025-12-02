@@ -70,15 +70,16 @@ env:
   - name: N8N_PORT
     value: "5678"
   - name: WEBHOOK_URL
-    value: "https://n8n.ldccai.com/"
+    value: "https://n8n.ldccai.com"
   - name: GENERIC_TIMEZONE
     value: "Asia/Seoul"
   - name: N8N_TRUST_PROXY
     value: "true"
-  - name: WEBHOOK_URL
-    value: https://n8n.ldccai.com/
   - name: N8N_TRUSTED_PROXIES
     value: "*"
+  - name: N8N_PROXY_HOPS
+    value: "1"
+
   - name: EXECUTIONS_MODE
     value: "queue"
   - name: QUEUE_MODE
