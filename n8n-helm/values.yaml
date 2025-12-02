@@ -72,6 +72,8 @@ env:
     value: "https://n8n.ldccai.com/"
   - name: GENERIC_TIMEZONE
     value: "Asia/Seoul"
+  - name: N8N_TRUST_PROXY
+    value: "true"
 
   - name: EXECUTIONS_MODE
     value: "queue"
