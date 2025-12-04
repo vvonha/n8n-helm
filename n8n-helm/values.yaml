@@ -79,8 +79,10 @@ env:
   - name: N8N_PROXY_HOPS
     value: "1"
 
+  - name: N8N_DEFAULT_CORS
+    value: "true"
   - name: N8N_CORS_ALLOW_ORIGIN
-    value: https://n8n-template-gallery.com,https://n8n.ldccai.com
+    value: https://n8n-template-gallery.ldccai.com,https://n8n.ldccai.com
   - name: N8N_CORS_ALLOW_METHODS
     value: GET,POST,PUT,DELETE,OPTIONS
   - name: N8N_CORS_ALLOW_HEADERS
