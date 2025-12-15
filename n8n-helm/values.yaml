@@ -106,7 +106,7 @@ env:
 
   # Use SSE for push updates to avoid the frontend opening malformed websocket URLs
   - name: N8N_PUSH_BACKEND
-    value: "sse"
+    value: "websocket"
 
   # Explicitly disable the public API so the UI skips licensed-only endpoints like /ai
   - name: N8N_PUBLIC_API_ENABLED
