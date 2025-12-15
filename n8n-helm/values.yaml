@@ -110,11 +110,15 @@ env:
 
   # Tell the frontend the absolute websocket base URL so it doesn't try to connect to a relative /rest/push path
   - name: N8N_WEBSOCKET_URL
-    value: "wss://n8n.ldccai.com/rest"
+    value: "wss://n8n.ldccai.com/rest/push"
 
   # Force the UI to use the ingress host for API calls instead of a relative/rest host
   - name: N8N_PUBLIC_API_BASE_URL
     value: "https://n8n.ldccai.com/rest"
+
+  # Explicitly disable the public API so the UI skips licensed-only endpoints like /ai
+  - name: N8N_PUBLIC_API_ENABLED
+    value: "false"
 
   - name: N8N_TELEMETRY_ENABLED
     value: "false"
