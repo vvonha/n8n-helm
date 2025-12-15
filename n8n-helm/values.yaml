@@ -36,6 +36,17 @@ resources:
     cpu: 2
     memory: 2Gi
 
+worker:
+  enabled: true
+  replicaCount: 2
+  resources:
+    requests:
+      cpu: 500m
+      memory: 512Mi
+    limits:
+      cpu: 2
+      memory: 2Gi
+
 autoscaling:
   enabled: true
   minReplicas: 2
@@ -125,7 +136,7 @@ env:
       secretKeyRef:
         name: n8n-postgres-secret
         key: POSTGRES_PASSWORD
-        
+
   - name: N8N_SESSION_SAVE_EVERY_REQUEST
     value: "true"
   - name: N8N_SESSION_DB_TYPE
