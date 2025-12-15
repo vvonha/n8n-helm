@@ -104,20 +104,9 @@ env:
   - name: N8N_PROXY_HOPS
     value: "1"
 
-  # Use websockets for push updates; the SSE endpoint returned 500 responses behind the ingress
+  # Use SSE for push updates to avoid the frontend opening malformed websocket URLs
   - name: N8N_PUSH_BACKEND
     value: "websocket"
-
-  # Tell the frontend the absolute websocket URL so it opens a valid wss:// connection instead of a relative path
-  - name: N8N_WEBSOCKET_URL
-    value: "wss://n8n.ldccai.com/rest/push"
-  # Explicitly set the push endpoint to the same absolute URL; some builds use this variable instead of N8N_WEBSOCKET_URL
-  - name: N8N_PUSH_ENDPOINT
-    value: "wss://n8n.ldccai.com/rest/push"
-
-  # Explicitly disable the public API so the UI skips licensed-only endpoints like /ai
-  - name: N8N_PUBLIC_API_ENABLED
-    value: "false"
 
   # Explicitly disable the public API so the UI skips licensed-only endpoints like /ai
   - name: N8N_PUBLIC_API_ENABLED
