@@ -85,7 +85,10 @@ env:
   - name: N8N_PORT
     value: "5678"
   - name: N8N_ENDPOINT_REST
-    value: "/rest"
+    value: "rest"
+  # Explicitly tell the frontend which REST endpoint to use so it doesn't default to an invalid host
+  - name: N8N_API_BASE_URL
+    value: "https://n8n.ldccai.com/rest"
   - name: N8N_EDITOR_BASE_URL
     value: "https://n8n.ldccai.com"
   - name: N8N_BASE_URL
@@ -101,12 +104,13 @@ env:
   - name: N8N_PROXY_HOPS
     value: "1"
 
+  # Use SSE for push updates to avoid the frontend opening malformed websocket URLs
   - name: N8N_PUSH_BACKEND
     value: "sse"
 
-  # Force the UI to use the ingress host for API calls instead of a relative/rest host
-  - name: N8N_PUBLIC_API_BASE_URL
-    value: "https://n8n.ldccai.com/rest"
+  # Explicitly disable the public API so the UI skips licensed-only endpoints like /ai
+  - name: N8N_PUBLIC_API_ENABLED
+    value: "false"
 
   - name: N8N_TELEMETRY_ENABLED
     value: "false"
@@ -121,6 +125,10 @@ env:
     value: "false"
   - name: N8N_AI_ASSISTANT_ENABLED
     value: "false"
+
+  # Block assistant API routes entirely so the UI stops calling licensed-only endpoints
+  - name: N8N_PUBLIC_API_DISABLED
+    value: "true"
 
   - name: N8N_DEFAULT_CORS
     value: "true"
