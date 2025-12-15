@@ -85,7 +85,7 @@ env:
   - name: N8N_PORT
     value: "5678"
   - name: N8N_ENDPOINT_REST
-    value: "/rest"
+    value: "rest"
   # Explicitly tell the frontend which REST endpoint to use so it doesn't default to an invalid host
   - name: N8N_API_BASE_URL
     value: "https://n8n.ldccai.com/rest"
