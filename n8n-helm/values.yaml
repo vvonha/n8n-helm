@@ -87,11 +87,9 @@ env:
   - name: N8N_ENDPOINT_REST
     value: "rest"
 
-  - name: N8N_PUBLIC_API_BASE_URL
+  - name: N8N_BASE_URL
     value: "https://n8n.ldccai.com"
   - name: N8N_EDITOR_BASE_URL
-    value: "https://n8n.ldccai.com"
-  - name: N8N_BASE_URL
     value: "https://n8n.ldccai.com"
   - name: WEBHOOK_URL
     value: "https://n8n.ldccai.com/"
@@ -107,7 +105,7 @@ env:
     value: "1"
 
   - name: N8N_PUSH_BACKEND
-    value: "sse"
+    value: "websocket"
 
   - name: N8N_PUBLIC_API_DISABLED
     value: "true"
