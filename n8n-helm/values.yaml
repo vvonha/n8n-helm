@@ -64,6 +64,9 @@ env:
   - name: N8N_BASIC_AUTH_PASSWORD
     value: "123bigdata"
 
+  - name: N8N_CUSTOM_EXTENSIONS
+    value: /custom
+
   - name: N8N_HOST
     value: "n8n.ldccai.com"
   - name: N8N_PORT
