@@ -52,7 +52,7 @@ redis:
 efs:
   enabled: true
   pvcName: n8n-efs-pvc
-  mountPath: /home/node/.n8n
+  mountPath: /home/node/.n8n/custom
   storageClassName: efs-sc
   storage: 1Gi
 
