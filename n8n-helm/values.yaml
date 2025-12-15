@@ -119,6 +119,10 @@ env:
   - name: N8N_PUBLIC_API_ENABLED
     value: "false"
 
+  # Explicitly disable the public API so the UI skips licensed-only endpoints like /ai
+  - name: N8N_PUBLIC_API_ENABLED
+    value: "false"
+
   - name: N8N_TELEMETRY_ENABLED
     value: "false"
 
