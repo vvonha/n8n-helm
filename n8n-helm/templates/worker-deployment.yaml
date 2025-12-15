@@ -19,7 +19,8 @@ spec:
         - name: n8n-worker
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          args: ["n8n", "worker"]
+          command: ["/bin/sh", "-c"]
+          args: ["/usr/local/bin/n8n worker"]
           env:
             {{- toYaml .Values.env | nindent 12 }}
           resources:
