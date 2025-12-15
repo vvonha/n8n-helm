@@ -143,3 +143,5 @@ env:
     value: "postgresdb"
   - name: N8N_ENCRYPTION_KEY
     value: "qaY5ufgkxX+C7Ft025s8r1JpjMJVFHkwo9iJdxIeNoA="
+  - name: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
+    value: "true"
