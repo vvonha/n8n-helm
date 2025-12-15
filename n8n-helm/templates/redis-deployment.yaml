@@ -28,4 +28,4 @@ spec:
         - name: redis-data
           persistentVolumeClaim:
             claimName: n8n-redis-pvc
-{{- end }}
+  {{- end }}
