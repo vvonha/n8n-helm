@@ -85,8 +85,10 @@ env:
   - name: N8N_PORT
     value: "5678"
   - name: N8N_ENDPOINT_REST
-    value: "/rest"
+    value: "rest"
   - name: N8N_EDITOR_BASE_URL
+    value: "https://n8n.ldccai.com"
+  - name: N8N_BASE_URL
     value: "https://n8n.ldccai.com"
   - name: WEBHOOK_URL
     value: "https://n8n.ldccai.com"
