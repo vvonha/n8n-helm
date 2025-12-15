@@ -161,3 +161,6 @@ env:
     value: "qaY5ufgkxX+C7Ft025s8r1JpjMJVFHkwo9iJdxIeNoA="
   - name: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
     value: "true"
+
+  - name: AIMEMBER_OPENAPI_BASE_URL
+    value: https://aidev-openapi.lotte.net
