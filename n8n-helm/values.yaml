@@ -108,6 +108,10 @@ env:
   - name: N8N_PUSH_BACKEND
     value: "websocket"
 
+  # Tell the frontend the absolute websocket base URL so it doesn't try to connect to a relative /rest/push path
+  - name: N8N_WEBSOCKET_URL
+    value: "wss://n8n.ldccai.com/rest"
+
   # Force the UI to use the ingress host for API calls instead of a relative/rest host
   - name: N8N_PUBLIC_API_BASE_URL
     value: "https://n8n.ldccai.com/rest"
