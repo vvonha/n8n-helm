@@ -104,9 +104,14 @@ env:
   - name: N8N_PROXY_HOPS
     value: "1"
 
-  # Use SSE for push updates to avoid the frontend opening malformed websocket URLs
-  - name: N8N_PUSH_BACKEND
-    value: "sse"
+    # Explicitly configure host/protocol so push connections are generated with the
+    # fully qualified URL expected by the frontend
+    - name: N8N_HOST
+      value: "n8n.ldccai.com"
+    - name: N8N_PROTOCOL
+      value: "https"
+    - name: N8N_PUSH_BACKEND
+      value: "websocket"
 
   # Explicitly disable the public API so the UI skips licensed-only endpoints like /ai
   - name: N8N_PUBLIC_API_ENABLED
