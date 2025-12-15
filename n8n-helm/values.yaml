@@ -52,7 +52,7 @@ redis:
 efs:
   enabled: true
   pvcName: n8n-efs-pvc
-  mountPath: /home/node/.n8n/custom
+  mountPath: /home/node/.n8n
   storageClassName: efs-sc
   storage: 1Gi
 
@@ -65,7 +65,7 @@ env:
     value: "123bigdata"
 
   - name: N8N_CUSTOM_EXTENSIONS
-    value: /custom
+    value: /home/node/.n8n/custom
 
   - name: N8N_HOST
     value: "n8n.ldccai.com"
