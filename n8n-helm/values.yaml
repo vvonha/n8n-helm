@@ -3,7 +3,7 @@ image:
   tag: 1.118.0
   pullPolicy: IfNotPresent
 
-replicaCount: 3
+replicaCount: 1
 
 service:
   type: ClusterIP
@@ -48,7 +48,7 @@ worker:
       memory: 2Gi
 
 autoscaling:
-  enabled: true
+  enabled: false
   minReplicas: 2
   maxReplicas: 10
   targetCPUUtilizationPercentage: 70
@@ -121,8 +121,6 @@ env:
   - name: N8N_AI_ASSISTANT_ENABLED
     value: "false"
 
-  - name: N8N_DEFAULT_CORS
-    value: "true"
   - name: N8N_CORS_ALLOW_ORIGIN
     value: "https://n8n-template-gallery.ldccai.com,https://n8n.ldccai.com"
   - name: N8N_CORS_ALLOW_METHODS
@@ -136,8 +134,6 @@ env:
 
   - name: EXECUTIONS_MODE
     value: "queue"
-  - name: QUEUE_MODE
-    value: "redis"
   - name: QUEUE_BULL_REDIS_HOST
     value: "n8n-redis.n8n.svc.cluster.local"
   - name: QUEUE_BULL_REDIS_PORT
