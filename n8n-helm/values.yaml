@@ -80,17 +80,17 @@ env:
 
   - name: N8N_HOST
     value: "n8n.ldccai.com"
-  - name: N8N_PROTOCOL
-    value: "https"
+  # - name: N8N_PROTOCOL
+  #   value: "https"
   - name: N8N_PORT
     value: "5678"
-  - name: N8N_ENDPOINT_REST
-    value: "rest"
+  # - name: N8N_ENDPOINT_REST
+  #   value: "rest"
 
-  - name: N8N_BASE_URL
-    value: "https://n8n.ldccai.com"
-  - name: N8N_EDITOR_BASE_URL
-    value: "https://n8n.ldccai.com"
+  # - name: N8N_BASE_URL
+  #   value: "https://n8n.ldccai.com"
+  # - name: N8N_EDITOR_BASE_URL
+  #   value: "https://n8n.ldccai.com"
   - name: WEBHOOK_URL
     value: "https://n8n.ldccai.com/"
 
@@ -106,10 +106,8 @@ env:
 
   - name: N8N_PUSH_BACKEND
     value: "websocket"
-
   - name: N8N_PUBLIC_API_DISABLED
     value: "true"
-
   - name: N8N_TELEMETRY_ENABLED
     value: "false"
   - name: N8N_TEMPLATES_ENABLED
