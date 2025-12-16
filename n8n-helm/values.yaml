@@ -1,9 +1,9 @@
 image:
   repository: n8nio/n8n
-  tag: 1.118.0
+  tag: latest
   pullPolicy: IfNotPresent
 
-replicaCount: 1
+replicaCount: 3
 
 service:
   type: ClusterIP
